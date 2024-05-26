@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar { /* Chrome / Safari */
+  width: 0px;
+  background: transparent; /* Optional: hide background if needed */
+}
+
+body::-moz-scrollbar { /* Mozilla (Firefox) */
+  /* Firefox doesn't support hiding completely, use a thin bar */
+  width: 5px;
+  background: rgba(0,0,0,0.2); /* Optional: style the scrollbar */
+}
+
+body {
+  background-color: #030317;
+  color: white;
+}
+
+.down-shadow {
+  box-shadow: 0px 3px 15px rgba(211, 206, 206, 0.348);
+}
+
+.drop-shadow {
+  transition: all 0.3s ease-in-out ;
+}
+
+.drop-shadow:hover {
+  box-shadow: 1px 3px 7px rgba(84, 84, 250, 0.732);
+}
+
+.animate-image {
+    animation: rotateImage 15s infinite; /* adjust timing and animation according to your preference */
+    z-index: 2;
+    filter: drop-shadow(0 4px 2px  #4977ff);
+  }
+  
+  @keyframes rotateImage {
+    0% {
+        transform: rotate(-60deg);
+      }
+      50% {
+        transform: rotate(60deg);
+      }
+      100% {
+        transform: rotate(-60deg);
+      }
+    }
+
+    @keyframes moveLeft {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  
+    @keyframes moveRight {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+  
+    .left-to-right {
+      animation: moveLeft 3s linear infinite alternate;
+      filter: drop-shadow(0 8px 20px  #4977ff);
+    }
+  
+    .right-to-left {
+      animation: moveRight 3s linear infinite alternate;
+      filter: drop-shadow(0 4px 20px  #4977ff);
+    }
+
+    .glow-border:hover {
+      box-shadow: 0px 2px 20px rgba(19, 19, 255, 0.755);
+    }
+   
+    @keyframes border-blink {
+      0% { border-color: #80b5ff; }
+      50% { border-color: #4977ff; }
+      80% { border-color: #4977ff; }
+      100% { border-color: #c9d7ff; }
+  }
+  
+  @keyframes identifier {
+      0% {  box-shadow:  0px 0px 10px 1px red; }
+      14% { box-shadow:  0px 0px 10px 1px #ffa500; }
+      28% { box-shadow:  0px 0px 10px 1px #ffff00; }
+      32% {box-shadow:  0px 0px 10px 1px #008000; }
+      46% { box-shadow:  0px 0px 10px 1px #0000ff; }
+      60% { box-shadow:  0px 0px 10px 1px #4b0082; }  
+      100% { box-shadow:  0px 0px 10px 1px #ee82ee; }  
+  }
+  
+  .animate-border-blink {
+      animation: border-blink 5s infinite;
+     animation: identifier 5s infinite;
+  }
+
+  .text-shadow {
+  color: #7998f4;
+  text-align: center;
+  text-shadow: 1px 3px 4px blue;
+}
+
+.button-hover {
+  transition: all 0.5s ease-in-out;
+}
+
+.button-hover:hover {
+  box-shadow: 2px 2px 0px rgb(255, 255, 255);
+  transform: translate(-2px, -2px);
+}
